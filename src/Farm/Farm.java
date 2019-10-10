@@ -6,7 +6,7 @@ public class Farm {
 //      Create 1 of each animal
         Cow moo = new Cow(12,100);
         Pig oink = new Pig(8,90);
-        Dog woof = new Dog(5,60);
+        Animal woof = new Animal (5,60,"Dog");
 //      Produce their sound
         moo.makeSound();
         oink.makeSound();

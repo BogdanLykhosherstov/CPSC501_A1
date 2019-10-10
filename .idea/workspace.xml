@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="823f0856-f4f6-4fb2-a52c-4ea1ead21387" name="Default Changelist" comment="Refactor Notes:&#10;1. Removed redundant followFarmer() code in Animal. &#10;    - Ended up never creating Farmer class &#10;2. Pull up makeSound() method due to duplicate code functionality in sibling classes into superclass of Animal. &#10;3. Extract method of checkEmptyBowl() in Pig class&#10;    1. Created a getter for isBowlEmpty for testing purposes&#10;4. Wrote unit tests to test the above.">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="823f0856-f4f6-4fb2-a52c-4ea1ead21387" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Farm/Milk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Animal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Cow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Cow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Dog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Pig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Pig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Dog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Farm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Farm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/A1/Farm/FarmTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/A1/Farm/FarmTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Farm/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Farm/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Farm/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Dog.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Farm/Farm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Farm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Farm/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Pig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Farm/FarmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Farm/FarmTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FarmTest">
+  <component name="RunManager" selected="JUnit.FarmTest.Animal_MakeSound">
     <configuration name="FarmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="A1" />
       <extension name="coverage">
@@ -81,7 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmTest.Animal_Create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FarmTest.Animal_EatWrongFood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="A1" />
       <extension name="coverage">
         <pattern>
@@ -91,13 +88,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Farm" />
       <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
-      <option name="METHOD_NAME" value="Animal_Create" />
+      <option name="METHOD_NAME" value="Animal_EatWrongFood" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmTest.Animal_EatFood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FarmTest.Animal_MakeSound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="A1" />
       <extension name="coverage">
         <pattern>
@@ -107,13 +104,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Farm" />
       <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
-      <option name="METHOD_NAME" value="Animal_EatFood" />
+      <option name="METHOD_NAME" value="Animal_MakeSound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmTest.Pig_checkEmptyBowl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FarmTest.Cow_MakeInvalidMilk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="A1" />
       <extension name="coverage">
         <pattern>
@@ -123,13 +120,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Farm" />
       <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
-      <option name="METHOD_NAME" value="Pig_checkEmptyBowl" />
+      <option name="METHOD_NAME" value="Cow_MakeInvalidMilk" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FarmTest.createAnimal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FarmTest.Cow_makeMilk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="A1" />
       <extension name="coverage">
         <pattern>
@@ -139,7 +136,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Farm" />
       <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
-      <option name="METHOD_NAME" value="createAnimal" />
+      <option name="METHOD_NAME" value="Cow_makeMilk" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FarmTest.Animal_MakeSound" />
         <item itemvalue="JUnit.FarmTest" />
-        <item itemvalue="JUnit.FarmTest.Pig_checkEmptyBowl" />
-        <item itemvalue="JUnit.FarmTest.Animal_EatFood" />
-        <item itemvalue="JUnit.FarmTest.Animal_Create" />
-        <item itemvalue="JUnit.FarmTest.createAnimal" />
+        <item itemvalue="JUnit.FarmTest.Animal_EatWrongFood" />
+        <item itemvalue="JUnit.FarmTest.Cow_MakeInvalidMilk" />
+        <item itemvalue="JUnit.FarmTest.Cow_makeMilk" />
       </list>
     </recent_temporary>
   </component>
@@ -166,6 +163,14 @@
       <option name="presentableId" value="Default" />
       <updated>1570417205141</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactor Notes:&#10;1. Removed redundant followFarmer() code in Animal. &#10;    - Ended up never creating Farmer class &#10;2. Pull up makeSound() method due to duplicate code functionality in sibling classes into superclass of Animal. &#10;3. Extract method of checkEmptyBowl() in Pig class&#10;    1. Created a getter for isBowlEmpty for testing purposes&#10;4. Wrote unit tests to test the above.">
+      <created>1570674625552</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570674625553</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,5 +185,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor Notes:&#10;1. Removed redundant followFarmer() code in Animal. &#10;    - Ended up never creating Farmer class &#10;2. Pull up makeSound() method due to duplicate code functionality in sibling classes into superclass of Animal. &#10;3. Extract method of checkEmptyBowl() in Pig class&#10;    1. Created a getter for isBowlEmpty for testing purposes&#10;4. Wrote unit tests to test the above." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Notes:&#10;1. Removed redundant followFarmer() code in Animal. &#10;    - Ended up never creating Farmer class &#10;2. Pull up makeSound() method due to duplicate code functionality in sibling classes into superclass of Animal. &#10;3. Extract method of checkEmptyBowl() in Pig class&#10;    1. Created a getter for isBowlEmpty for testing purposes&#10;4. Wrote unit tests to test the above." />
   </component>
 </project>

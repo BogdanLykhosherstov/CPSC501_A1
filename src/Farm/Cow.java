@@ -1,25 +1,20 @@
 package Farm;
 
-import java.util.ArrayList;
-
 public class Cow extends Animal {
     public Cow(int age, int weight){
         super(age, weight,"Cow");
     }
 
+    public Milk makeMilk(int numberOfLitres, String type, String fatContent, boolean isChocolateMilk){
 
-//   2. Primitive Obsession - extract into an object or a class
-    public ArrayList<Object> makeMilk(int numberOfLitres, String type, String fatContent, boolean isChocolateMilk){
-        ArrayList<Object> milk = new ArrayList<>();
+        Milk milkObject = null;
         if(numberOfLitres>0){
-            milk.add(numberOfLitres);
+            milkObject = new Milk(numberOfLitres, type, fatContent,isChocolateMilk);
         }
         else{
             System.out.println("Uh oh. Try making milk again!");
         }
-        milk.add(type);
-        milk.add(fatContent);
-        milk.add(isChocolateMilk);
-        return milk;
+
+        return milkObject;
     }
 }
