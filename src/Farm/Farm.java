@@ -8,9 +8,9 @@ public class Farm {
         Pig oink = new Pig(8,90);
         Dog woof = new Dog(5,60);
 //      Produce their sound
-        moo.cowSound();
-        oink.pigSound();
-        woof.dogSound();
+        moo.makeSound();
+        oink.makeSound();
+        woof.makeSound();
 
     }
 }

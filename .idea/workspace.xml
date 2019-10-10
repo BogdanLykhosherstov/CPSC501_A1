@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="823f0856-f4f6-4fb2-a52c-4ea1ead21387" name="Default Changelist" comment="" />
+    <list default="true" id="823f0856-f4f6-4fb2-a52c-4ea1ead21387" name="Default Changelist" comment="Refactor Notes:&#10;1. Removed redundant followFarmer() code in Animal. &#10;    - Ended up never creating Farmer class &#10;2. Pull up makeSound() method due to duplicate code functionality in sibling classes into superclass of Animal. &#10;3. Extract method of checkEmptyBowl() in Pig class&#10;    1. Created a getter for isBowlEmpty for testing purposes&#10;4. Wrote unit tests to test the above.">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Cow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Cow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A1/Farm/Pig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A1/Farm/Pig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/A1/Farm/FarmTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/A1/Farm/FarmTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Cow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Farm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Farm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Pig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Farm/FarmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Farm/FarmTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +32,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RrFFeZPT12WA2h1lTaPZewlsXC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="public" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -45,16 +65,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FarmTest.Animal_Create">
-    <configuration name="Customer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Farm.Customer" />
-      <module name="A1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Farm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Farm.Farm" />
+  <component name="RunManager" selected="JUnit.FarmTest">
+    <configuration name="FarmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="A1" />
       <extension name="coverage">
         <pattern>
@@ -62,6 +74,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Farm" />
+      <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -77,6 +92,38 @@
       <option name="PACKAGE_NAME" value="Farm" />
       <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
       <option name="METHOD_NAME" value="Animal_Create" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmTest.Animal_EatFood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="A1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Farm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Farm" />
+      <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
+      <option name="METHOD_NAME" value="Animal_EatFood" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmTest.Pig_checkEmptyBowl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="A1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Farm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Farm" />
+      <option name="MAIN_CLASS_NAME" value="Farm.FarmTest" />
+      <option name="METHOD_NAME" value="Pig_checkEmptyBowl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,10 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FarmTest" />
+        <item itemvalue="JUnit.FarmTest.Pig_checkEmptyBowl" />
+        <item itemvalue="JUnit.FarmTest.Animal_EatFood" />
         <item itemvalue="JUnit.FarmTest.Animal_Create" />
         <item itemvalue="JUnit.FarmTest.createAnimal" />
-        <item itemvalue="Application.Farm" />
-        <item itemvalue="Application.Customer" />
       </list>
     </recent_temporary>
   </component>
@@ -119,5 +167,18 @@
       <updated>1570417205141</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

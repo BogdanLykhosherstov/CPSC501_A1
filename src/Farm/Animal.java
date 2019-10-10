@@ -6,9 +6,7 @@ public class Animal {
     private int age;
     private int weight;
     private String type;
-    //1. Duplicate Method in subclasses:
-    // - change isHungry to private, implement eatFood method in Animal
-    public boolean isHungry;
+    private boolean isHungry;
     private String whoToFollow;
 
     public Animal(int age, int weight, String type){
@@ -18,17 +16,37 @@ public class Animal {
         this.isHungry = false;
 
     }
-    public String getType() {
-        return type;
+
+    public String eatFood(String food){
+
+        if(this.type.equals("Cow") && food.equals("Grass")){
+            this.isHungry = false;
+            return "Thanks!";
+        }
+        else if (this.type.equals("Pig") && food.equals("Roots")){
+            this.isHungry = false;
+            return "Thanks!";
+        }
+        else{
+            return "I can't eat that!";
+        }
     }
 
+    public String makeSound(){
+        switch (this.type) {
+            case "Cow":
+                return "Moo!";
+            case "Pig":
+                return "Oink!";
+            case "Dog":
+                return "Woof!";
+            default:
+                return "Generic Animal Sound!";
+        }
+    }
 
-    // 5. Speculative Generality - Remove method that was added for future expansion that never occurred.
-    // - remove method
-    // TODO : add farmer class for aggregation of animals and running the farm
-
-    public void followFarmer(String farmerName){
-        this.whoToFollow = farmerName;
+    public String getType() {
+        return type;
     }
 
 }
