@@ -11,9 +11,6 @@ public class Pig extends Animal{
     public Pig(int age, int weight){
         super(age, weight,"Pig");
     }
-    public void pigSound(){
-        System.out.println("Oink!");
-    }
 
     public void checkEmptyBowl() {
         if (!isBowlEmpty) {
